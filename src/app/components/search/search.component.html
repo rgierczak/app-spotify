@@ -1,1 +1,15 @@
-SEARCH
+<h1>Need Music ?</h1>
+<p class="lead">Browse and listen your favourite music, by typing an artist name in search input below.</p>
+
+<form>
+    <div class="form-group">
+        <input
+            type="text"
+            name="artist"
+            (keyup)="searchMusic()"
+            [(ngModel)]="artist"
+            class="form-control"
+            placeholder="Search Music..."
+        >
+    </div>
+</form>
