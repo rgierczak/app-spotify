@@ -22,8 +22,12 @@ export class SpotifyService {
         return API_URL + 'artists/' + id;
     }
 
-    private static _buildGetAlbumURL(id: string) {
+    private static _buildGetAlbumsURL(id: string) {
         return API_URL + 'artists/' + id + '/albums';
+    }
+    
+    private static _buildGetAlbumURL(id: string) {
+        return API_URL + 'albums/' + id;
     }
     
     private _getData(url: string) {
@@ -37,12 +41,17 @@ export class SpotifyService {
         return this._getData(url);
     }
 
-    getArtist(id: string) {
-        let url = SpotifyService._buildGetArtistURL(id);
+    getArtist(artistId: string) {
+        let url = SpotifyService._buildGetArtistURL(artistId);
         return this._getData(url);
     }
 
     getAlbums(artistId: string) {
+        let url = SpotifyService._buildGetAlbumsURL(artistId);
+        return this._getData(url);
+    }
+
+    getAlbum(artistId: string) {
         let url = SpotifyService._buildGetAlbumURL(artistId);
         return this._getData(url);
     }

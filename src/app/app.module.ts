@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
+import { AlbumComponent } from './components/album/album.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchComponent  } from './components/search/search.component';
@@ -23,6 +24,7 @@ import { SpotifyService } from './services/spotify.service';
     declarations: [
         AppComponent,
         AboutComponent,
+        AlbumComponent,
         ArtistComponent,
         NavbarComponent,
         SearchComponent
