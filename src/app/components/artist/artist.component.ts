@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.service';
+import { ActivatedRoute } from '@angular/router';
+
 import { AlbumModel } from "../../models/album.model";
 import { ArtistModel } from "../../models/artist.model";
-import { ActivatedRoute } from '@angular/router';
+
+import { SpotifyService } from '../../services/spotify.service';
 
 @Component({
     selector: 'artist',
@@ -29,7 +31,13 @@ export class ArtistComponent implements OnInit {
                     .getArtist(id)
                     .subscribe((artist) => {
                         this.artist = artist;
-                    })
+                    });
+
+                this._spotifyService
+                    .getAlbums(id)
+                    .subscribe((albums) => {
+                        this.albums = albums.items;
+                    });
             })
     }
 }
