@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AlbumModel } from "../../models/album.model";
+import { AlbumInterface } from "../../interfaces/album.interface";
 import { SpotifyService } from '../../services/spotify.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { SpotifyService } from '../../services/spotify.service';
 
 export class AlbumComponent implements OnInit {
     id: string;
-    album: AlbumModel;
+    album: AlbumInterface;
     
     constructor(
         private _spotifyService: SpotifyService,

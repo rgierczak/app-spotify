@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
-import { ArtistModel } from '../../models/artist.model';
+import { ArtistInterface } from '../../interfaces/artist.interface';
 
 @Component({
     selector: 'search',
@@ -9,7 +9,7 @@ import { ArtistModel } from '../../models/artist.model';
 
 export class SearchComponent {
     private artist: string;
-    private searchResult: ArtistModel[];
+    private searchResult: ArtistInterface[];
     
     constructor(private _spotifyService: SpotifyService) {}
 
